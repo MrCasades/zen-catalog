@@ -528,6 +528,8 @@ function defaultRegFormData()
 					 <script src="/js/jquery-1.min.js"></script>
 					 <script src="/js/bootstrap-markdown.js"></script>
 					 <script src="/js/bootstrap.min.js"></script>';//добавить код JS
+	
+	$GLOBALS ['reCapchaAPI'] = '<script src="https://www.google.com/recaptcha/api.js"></script>'; //для ReCapcha
 }
 
 /*Добавление микроразметки*/
@@ -641,6 +643,8 @@ function updCommentData($id, $idArticle)
 					 <script src="//'.MAIN_URL.'/js/jquery-1.min.js"></script>
 					 <script src="//'.MAIN_URL.'/js/bootstrap-markdown.js"></script>
 					 <script src="//'.MAIN_URL.'/js/bootstrap.min.js"></script>';//добавить код JS
+	
+	$GLOBALS ['reCapchaAPI'] = '<script src="https://www.google.com/recaptcha/api.js"></script>'; //для ReCapcha
 }
 
 /*Обновление комментариев*/

@@ -173,7 +173,6 @@ elseif (userRole('Администратор'))
 	$payForms = '<div align = "center"><form action = "//'.MAIN_URL.'/admin/payment/" method = "post">
 								<div>
 									<input type = "hidden" name = "id" value = "'.$selectedAuthor.'">
-									<input type = "submit" name = "action" class="btn btn-primary btn-sm" value = "Вывести средства">
 									<input type = "submit" name = "action" class="btn btn-primary btn-sm" value = "Пополнить счёт">
 								</div>
 							</form></div>';
@@ -386,7 +385,6 @@ elseif (userRole('Администратор') || userRole('Автор'))
 	$payForms = '<div align = "center"><form action = "//'.MAIN_URL.'/admin/payment/" method = "post">
 								<div>
 									<input type = "hidden" name = "id" value = "'.$selectedAuthor.'">
-									<input type = "submit" name = "action" class="btn btn-primary btn-sm" value = "Вывести средства">
 									<input type = "submit" name = "action" class="btn btn-primary btn-sm" value = "Пополнить счёт">
 								</div>
 							</form></div>';
@@ -485,7 +483,6 @@ elseif (userRole('Администратор') || userRole('Автор') || user
 	$payForms = '<div align = "center"><form action = "//'.MAIN_URL.'/admin/payment/" method = "post">
 								<div>
 									<input type = "hidden" name = "id" value = "'.$selectedAuthor.'">
-									<input type = "submit" name = "action" class="btn btn-primary btn-sm" value = "Вывести средства">
 									<input type = "submit" name = "action" class="btn btn-primary btn-sm" value = "Пополнить счёт">
 								</div>
 							</form></div>';

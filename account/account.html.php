@@ -27,7 +27,6 @@ include_once MAIN_FILE . '/header.inc.php';?>
 					echo $openTable;
 					echo $paysystemName;
 					echo $ewallet;
-					echo $updEwalletDate;
 					echo $closeTable;
 				}?></p>
 			

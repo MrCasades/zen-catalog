@@ -64,7 +64,7 @@ if (isset($_GET['add']))//Если есть переменная add вывод�
 	/*Команда SELECT выбор количества одобренных каналов*/
 	try
 	{
-		$sql = 'SELECT count(*) AS cannelcount FROM promotion WHERE premoderation = "YES" AND idauthor = '.$selectedAuthor;
+		$sql = 'SELECT count(*) AS cannelcount FROM promotion WHERE idauthor = '.$selectedAuthor;
 		$s = $pdo->prepare($sql);// подготавливает запрос для отправки в бд и возвр объект запроса присвоенный переменной
 		$s -> execute();// метод дает инструкцию PDO отправить запрос MySQL
 	}
@@ -88,7 +88,7 @@ if (isset($_GET['add']))//Если есть переменная add вывод�
 		$headMain = 'Нельзя добавить канал!';
 		$robots = 'noindex, nofollow';
 		$descr = '';
-		$error = 'Нельзя добавить более '.$maxCannel.' каналов для одной учётной записи!';// вывод сообщения об ошибке в переменой $e
+		$error = 'Нельзя добавить более '.($maxCannel + 1).' каналов для одной учётной записи!';// вывод сообщения об ошибке в переменой $e
 		include 'error.html.php';
 		exit();
 	}
@@ -514,7 +514,6 @@ if (isset($_GET['addform']))//Если есть переменная addform в�
 			description = :description,
 			promotiondate = SYSDATE(),
 			imgalt = :imgalt,
-			videoyoutube = :videoyoutube,
 			www = :www,
 			pricetext = '.$_SESSION['promotionprice'].',
 			imghead = '.'"'.$fileName.'"'.', '.
@@ -525,7 +524,6 @@ if (isset($_GET['addform']))//Если есть переменная addform в�
 		$s -> bindValue(':promotiontitle', $_POST['promotiontitle']);//отправка значения
 		$s -> bindValue(':description', $_POST['description']);//отправка значения
 		$s -> bindValue(':imgalt', $_POST['imgalt']);//отправка значения
-		$s -> bindValue(':videoyoutube', $_POST['videoyoutube']);//отправка значения
 		$s -> bindValue(':www', $_POST['www']);//отправка значения
 		$s -> bindValue(':idcategory', $_POST['category']);//отправка значения
 		$s -> execute();// метод дает инструкцию PDO отправить запрос MySQL

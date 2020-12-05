@@ -6,7 +6,7 @@ include_once MAIN_FILE . '/includes/func.inc.php';
 include_once MAIN_FILE . '/header.inc.php';?>
 	<p><a name="bottom"></a></p>  
 	<div class = "maincont_for_view">
-	<div class = "post">
+	<div class = "post_reg_log">
 	  <div  align="justify">
 		<p>Зарегестрируйтесь в системе, чтобы получить возможность добавить в каталог свой канал, добавлять каналы других пользователей в избранное и предлагать взаимные действия.</p>
 

@@ -328,7 +328,7 @@ try
 	$sql = 'SELECT promotion.id AS promotionid, author.id AS idauthor, promotion, promotiontitle, imghead, imgalt, promotion.www, promotiondate, authorname, category.id AS categoryid, categoryname FROM promotion 
 			INNER JOIN author ON idauthor = author.id 
 			INNER JOIN category ON idcategory = category.id 
-			WHERE premoderation = "YES" ORDER BY promotiondate DESC LIMIT 7';//Вверху самое последнее значение
+			WHERE premoderation = "YES" ORDER BY promotiondate DESC LIMIT 8';//Вверху самое последнее значение
 	$result = $pdo->query($sql);
 }
 

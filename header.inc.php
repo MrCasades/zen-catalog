@@ -22,26 +22,15 @@
 	<meta name="11e66bf0747b49e92165b564157d94b9" content="">
 	<meta name="pmail-verification" content="ddfba33030d7dda60e94c41aadfd4340">
 	
-	
-	<script src='https://www.google.com/recaptcha/api.js'></script>
-	
 	<?php 
+		//для reCapcha
+        echo $reCapchaAPI = $reCapchaAPI ?? '';
         //Микроразметка
-        if (empty ($jQuery)) $jQuery = '';
-    
-        echo $jQuery; ?>
-		
-	<?php 
-        //Микроразметка
-        if (empty ($dataMarkup)) $dataMarkup = '';
-    
-        echo $dataMarkup; ?>
-		
-	<?php 
-        //Дополнительный код
-        if (empty ($otherCode)) $otherCode = '';
-    
-        echo $otherCode; ?>
+        echo $jQuery = $jQuery ?? '';
+		//Микроразметка
+        echo $dataMarkup = $dataMarkup ?? '';
+		//Дополнительный код
+        echo $otherCode = $otherCode ?? '';?>
 	
 </head>
 <body>

@@ -7,7 +7,7 @@ require_once MAIN_FILE . '/includes/access.inc.php';
 /*Загрузка ссылки для входа, регистрации*/
 if (!isset($_SESSION['loggIn']))//если не выполнен вход в систему
 {
-	$logPanel = "<a href='//".MAIN_URL."/admin/registration/?log#bottom'><strong>Вход</strong></a> | <a href='//".MAIN_URL."/admin/registration/?reg#bottom'><strong>Регистрация</strong></a>";
+	$logPanel = "<h4>Для добавления Дзен-каналов и выполнения прочих действий на сайте Вам надо выполнить <a href='//".MAIN_URL."/admin/registration/?log#bottom'>вход</a> или <a href='//".MAIN_URL."/admin/registration/?reg#bottom'>зарегестрироваться</a>";
 }
 
 /*Загрузка имени вошедшего пользователя и кнопки выхода из системы*/
