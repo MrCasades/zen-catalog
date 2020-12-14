@@ -25,7 +25,7 @@ include_once MAIN_FILE . '/header.inc.php';?>
 		<td><label for = "promotion"> Выберете свой канал для совместного действия:</label></td>
 		<td>
 		<select name = "idpromotionfrom" id = "idpromotionfrom">
-		  <option value = "">Мои каналы</option>
+		  <option value = "" >Мои каналы</option>
 			<?php foreach ($authorPromotions as $authorPromotion): ?>
 			 <option value = "<?php htmlecho($authorPromotion['idpromotion']); ?>"
 			 <?php if ($authorPromotion['idpromotion'] == $idtasktype)
@@ -39,8 +39,10 @@ include_once MAIN_FILE . '/header.inc.php';?>
 		</tr>		
 	 </div>
 	 </table>
+	 <p id = "incorr" style="color: red"></p>
 	<div>
 		<label for = "description">Опишите суть совместного действия в нескольких предложениях. (Подписка, лайк, дочитка и т. д.)</label><br>
+		<p id = "incorrdesc" style="color: red"></p>
 		<textarea class = "descr" id = "description" name = "description" data-provide="markdown" rows="10"><?php htmlecho($description);?></textarea>	
 	 </div>
 	 <hr/>
@@ -48,7 +50,7 @@ include_once MAIN_FILE . '/header.inc.php';?>
 		<input type = "hidden" name = "idauthorto" value = "<?php htmlecho($authorId); ?>">
 		<input type = "hidden" name = "idarticle" value = "<?php htmlecho($idPromotion); ?>">
 		<input type = "hidden" name = "id" value = "<?php htmlecho($id); ?>">
-		<input type = "submit" value = "<?php htmlecho($button); ?>" class="btn btn-primary btn-sm">
+		<input type = "submit" value = "<?php htmlecho($button); ?>" class="btn btn-primary btn-sm" id = "confirm">
 	  </div>	  
 	</form>	
 	</div>

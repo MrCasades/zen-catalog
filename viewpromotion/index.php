@@ -338,12 +338,12 @@ if (isset ($_GET['id']))
 					  </form>
 					  <strong><p id = "result_form_recomm"></p></strong>';
 		
-		$setAction = '<strong><form action = "../admin/addtask/" method = "post">
+		$setAction = $authorId != $selectedAuthor ? '<strong><form action = "../admin/addtask/" method = "post">
 						<input type = "hidden" name = "idauthorto" value = "'.$authorId.'">
 						<input type = "hidden" name = "idarticle" value = "'.$idPromotion.'">
 						<input type = "hidden" name = "action" value = "ПРЕДЛОЖИТЬ ВЗАИМНОЕ ДЕЙСТВИЕ">
 						<input type="image" src="act.jpg" alt="ПРЕДЛОЖИТЬ ВЗАИМНОЕ ДЕЙСТВИЕ" title="ПРЕДЛОЖИТЬ ВЗАИМНОЕ ДЕЙСТВИЕ" id = "butt_act">
-					  </form></strong>';
+					  </form></strong>' : '';//нельзя предложить совместное действие самому себе
 			
 			
 			
@@ -387,28 +387,7 @@ if (isset ($_GET['id']))
 		$similarPosts[] =  array ('id' => $row['id'], 'promotiontitle' =>  $row['promotiontitle'], 'imghead' =>  $row['imghead'], 'imgalt' =>  $row['imgalt']);
 	}	
 	
-	/*Подсчёт статей для определения числа колонок в выводе*/
-	try
-	{
-		$sql = 'SELECT count(*) AS count_all FROM promotion WHERE idcategory = '.$categoryID.' AND premoderation = "YES"';
-		$s = $pdo->prepare($sql);// подготавливает запрос для отправки в бд и возвр объект запроса присвоенный переменной
-		$s -> execute();// метод дает инструкцию PDO отправить запрос MySQL
-	}
-	
-	catch (PDOException $e)
-	{
-		$title = 'ImagozCMS | Ошибка данных!';//Данные тега <title>
-		$headMain = 'Ошибка данных!';
-		$robots = 'noindex, nofollow';
-		$descr = '';
-		$error = 'Ошибка вывода заголовка похожей статьи ' . $e -> getMessage();// вывод сообщения об ошибке в переменой $e
-		include 'error.html.php';
-		exit();
-	}
-	
-	$row = $s -> fetch();
-	
-	$columns = $row['count_all'] > 1 ? 'columns' : 'columns_f1';
+	$columns = count ($similarPosts) > 1 ? 'columns' : 'columns_f1';//подсчёт материалов
 	
 	/*Вывод комментариев*/
 	/*Постраничный вывод информации*/

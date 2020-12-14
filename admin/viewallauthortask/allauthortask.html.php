@@ -60,7 +60,6 @@ include_once MAIN_FILE . '/header.inc.php';?>
 		      		    </form></p>
 					</div>
 					<p align = "justify"><?php echomarkdown (implode(' ', array_slice(explode(' ', strip_tags($task['text'])), 0, 50))); ?> [...]</p>
-					<a href="../../admin/viewallauthortask/viewtask/?id=<?php htmlecho ($task['id']); ?>" class="btn btn-primary">Далее</a>
 				   </div>	
 				 </div>
 			</div>			

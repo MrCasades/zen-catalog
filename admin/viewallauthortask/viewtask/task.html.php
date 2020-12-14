@@ -28,7 +28,7 @@ include_once MAIN_FILE . '/header.inc.php';?>
 					<p><?php echomarkdown ($task['text']); ?></p>
 					<form action = " " metod = "post" id = "ajax_form_conf">
 						<input type = "hidden" name = "idtask" id = "idtask" value = "<?php echo $task['id'];?>">
-						<input type="submit" value="Выполнить действие" onclick="window.open ('<?php echo $task['promotionwww'];?>');" class="btn btn-primary btn-sm" id = "confirm" name = "confirm"/>
+						<input type="submit" value="Выполнить действие" onclick="window.open ('//<?php echo $task['promotionwww'];?>');" class="btn btn-primary btn-sm" id = "confirm" name = "confirm"/>
 						<strong><p id = "result_form_conf"></p></strong>
 					</form>	
 			</div>			
